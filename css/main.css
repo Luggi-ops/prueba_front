@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  /*reset para rem*/ }
+
+body {
+  font-size: 1.8rem; }
+
+.nav {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem; }
+  .nav .nav__logo img {
+    width: 18rem; }
+  .nav .nav__ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%; }
+    .nav .nav__ul a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff; }
