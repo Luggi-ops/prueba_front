@@ -1,0 +1,31 @@
+//productos
+
+
+.productos{
+
+    .productos__banner{
+        height: 40rem;
+        background-image: url(../img/BANNER_Sillon.png);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s;
+
+        &:hover{
+            filter: brightness(.8);
+        }
+        &:hover>h2{
+            transform: scale(1.1);
+        }
+    }
+
+    h2{
+        font-family: 'Barlow black';
+        font-size: 6rem;
+        font-weight: 400;
+        color: $white;
+        transition: all .5s;
+    }
+
+    
+}

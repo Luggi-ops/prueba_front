@@ -91,6 +91,25 @@ body {
   .nosotros .nosotros__text {
     flex-basis: 50%; }
 
+.productos .productos__banner {
+  height: 40rem;
+  background-image: url(../img/BANNER_Sillon.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s; }
+  .productos .productos__banner:hover {
+    filter: brightness(0.8); }
+  .productos .productos__banner:hover > h2 {
+    transform: scale(1.1); }
+
+.productos h2 {
+  font-family: 'Barlow black';
+  font-size: 6rem;
+  font-weight: 400;
+  color: #ffffff;
+  transition: all .5s; }
+
 h1 {
   color: #ffffff;
   text-transform: uppercase;
