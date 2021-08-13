@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'Barlow black';
+  src: url(../fonts/Barlow/BARLOW-EXTRALIGHT.TTF) format("truetype");
+  font-style: normal;
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'Barlow black';
+  src: url(../fonts/Barlow/BARLOW-REGULAR.TTF) format("truetype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Barlow black';
+  src: url(../fonts/Barlow/BARLOW-MEDIUM.TTF) format("truetype");
+  font-style: normal;
+  font-weight: 500; }
+
+@font-face {
+  font-family: 'Barlow black';
+  src: url(../fonts/Barlow/BARLOW-BOLD.TTF) format("truetype");
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: Garamond;
+  src: url(../fonts/Garamond/GARA.TTF) format("truetype");
+  font-style: normal;
+  font-weight: 400; }
+
 * {
   margin: 0;
   padding: 0;
@@ -8,22 +38,69 @@ html {
   /*reset para rem*/ }
 
 body {
-  font-size: 1.8rem; }
+  font-size: 2rem;
+  font-family: 'Barlow black';
+  font-weight: 400; }
 
-.nav {
+.container {
+  width: 90%;
+  margin: 0 auto; }
+
+.header {
   background-color: #000000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 6rem; }
-  .nav .nav__logo img {
-    width: 18rem; }
-  .nav .nav__ul {
-    list-style: none;
+  padding: 2rem 0; }
+  .header .nav {
     display: flex;
-    justify-content: space-around;
-    width: 50%; }
-    .nav .nav__ul a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #ffffff; }
+    justify-content: space-between;
+    align-items: center; }
+    .header .nav .nav__logo img {
+      width: 18rem; }
+    .header .nav .nav__ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      width: 50%; }
+      .header .nav .nav__ul a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-family: 'Barlow black';
+        font-weight: 300;
+        font-size: 2rem; }
+
+.top {
+  height: 60vh;
+  background-image: url(../img/slider.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed; }
+  .top .top__text--modified {
+    font-size: 7rem;
+    font-weight: 400; }
+
+.nosotros {
+  padding: 8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .nosotros .nosotros__img {
+    flex-basis: 40%;
+    padding: 4rem 0 0 0 img;
+      padding-width: 25rem; }
+  .nosotros .nosotros__text {
+    flex-basis: 50%; }
+
+h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Barlow black';
+  font-weight: 300;
+  font-size: 3rem;
+  white-space: pre-line;
+  text-align: center; }
+
+h2 {
+  font-family: Garamond;
+  font-weight: 300;
+  font-size: 5rem; }

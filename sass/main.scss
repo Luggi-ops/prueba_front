@@ -1,4 +1,23 @@
 
 @import 'utilities/colors';
+@import 'utilities/fonts';
 @import 'bases/resets';
 @import 'layout/header';
+@import 'layout/top_section';
+@import 'layout/nosotros';
+
+h1{
+    color: $white;
+    text-transform: uppercase;
+    font-family: 'Barlow black';
+    font-weight: 300;
+    font-size: 3rem;
+    white-space: pre-line;
+    text-align: center;
+}
+
+h2{
+    font-family: Garamond;
+    font-weight: 300;
+    font-size: 5rem;
+}

@@ -1,29 +1,35 @@
 //header y nav
 
-.nav{
+.header{
     background-color: $black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 6rem;
+    padding: 2rem 0;
 
-    .nav__logo{
-        img{
-            width: 18rem;
-        }
-    }
-
-    .nav__ul{
-        list-style: none;
+    .nav{
         display: flex;
-        justify-content: space-around;
-        width: 50%;
-
-        a{
-            text-decoration: none;
-            text-transform: uppercase;
-            color: $white;
-
+        justify-content: space-between;
+        align-items: center;
+        
+    
+        .nav__logo{
+            img{
+                width: 18rem;
+            }
+        }
+    
+        .nav__ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+    
+            a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $white;
+                font-family: 'Barlow black';
+                font-weight: 300;
+                font-size: 2rem;
+            }
         }
     }
 }
