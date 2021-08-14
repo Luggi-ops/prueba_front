@@ -76,48 +76,65 @@
         <a href="#" class="btn btn-prim">Ver más</a>
     </main>
 
-    <section>
+    <section class="contacto" id="contacto">
         <div>
-            <h2>Formulario</h2>
-            <form action="">
-                <label for="name">Nombre</label>
-                <input type="text" id="name">
+            <h3>Formulario</h3>
+            <form action="" class="formulario">
+                <div class="formulario__item">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name">
+                </div>
+                
+                <div class="formulario__item">
+                    <label for="prov">Provincia</label>
+                    <select id="prov">
+                        <option value=""></option>
+                    </select>
+                </div>
+                
+                <div class="formulario__item">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                </div>
 
-                <label for="prov">Provincia</label>
-                <select id="prov">
-                    <option value="">select</option>
-                </select>
+                <div class="formulario__item">
+                    <label for="data">Horario de contacto</label>
+                    <input type="time" id="data">
+                </div>
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email">
+                <div class="formulario__item">
+                    <label for="tel">Teléfono</label>
+                    <input type="tel" id="tel">
+                </div>
 
-                <label for="data">Horario de contacto</label>
-                <input type="data" id="data">
+                <div class="formulario__item">
+                    <label for="cons">Consulta</label>
+                    <textarea name="const" id="cons"></textarea>
+                </div>
 
-                <label for="tel">Teléfono</label>
-                <input type="tel" id="tel">
-
-                <label for="cons">Consulta</label>
-                <textarea name="const" id="cons" cols="30" rows="10"></textarea>
+ 
+                <button type="submit" class="btn btn-prim btn-form">Enviar</button>
+                
             </form>
         </div>
 
-        <div>
-            <h2>Contacto</h2>
+        <div class="contacto__datos">
+            <h3>Contacto</h3>
             <ul>
-                <li>0800-000-0000</li>
-                <li>11-00000000</li>
-                <li>Lorem ipsum 555</li>
+                <li class="tel">0800-000-0000</li>
+                <li class="cel">11-00000000</li>
+                <li class="loc">Lorem ipsum 555</li>
             </ul>
         </div>
 
-        <div>
-            <h2>Horarios</h2>
-            <p>Lunes a Viernes 10:00 - 19:00 hs.</p>
+        <div class="contacto__datos">
+            <h3>Horarios</h3>
+            <p>Lunes a Viernes 
+                10:00 - 19:00 hs.</p>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados.</p>
     </footer>
 </body>

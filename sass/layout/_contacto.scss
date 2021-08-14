@@ -1,0 +1,91 @@
+
+
+.contacto{
+    background-color: $black;
+    color: $white;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 5rem;
+    padding: 7rem;
+
+    h3{
+        margin-bottom: 3rem;
+    }
+
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 4rem;
+
+        .formulario__item{
+            margin-bottom: 2rem;
+
+            input, select, textarea{
+                border: none;
+                background-color: transparent;
+                border-bottom: 1px solid $branding;
+                display: block;
+                height: 4rem;
+                width: 100%;
+                color: $white;
+                
+            }
+        }
+
+        .btn{
+            grid-column: 2/3;
+            width: 10rem;
+            margin-left: auto;
+        }
+    }
+
+    .contacto__datos{
+        margin-left: 5rem;
+        ul{
+            list-style: none;
+            li{
+                margin: 2rem 0 0 2rem;
+            }
+
+            .tel{
+                position: relative;
+                &:before{
+                  content: url(../img/phone-alt-solid.svg); 
+                  position: absolute;
+                  width: 2rem;
+                  left: -3rem;
+                    
+                }
+            }
+
+            .cel{
+                position: relative;
+                &:before{
+                  content: url(../img/whatsapp-brands.svg); 
+                  position: absolute;
+                  width: 2rem;
+                  left: -3rem;
+                    
+                }
+            }
+
+            .loc{
+                position: relative;
+                &:before{
+                  content: url(../img/map-marker-alt-solid.svg); 
+                  position: absolute;
+                  width: 2rem;
+                  left: -3rem;
+                    
+                }
+            }
+        }
+
+        p{
+            margin-top: 2rem;
+            white-space: pre-line;
+        }
+
+        
+    }
+}

@@ -29,13 +29,18 @@
   font-weight: 400; }
 
 .btn {
-  padding: 1rem 4rem;
+  background-color: #75DED7;
+  color: #ffffff;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer; }
 
 .btn-prim {
-  background-color: #75DED7;
-  color: #ffffff; }
+  padding: 1rem 4rem; }
+
+.btn-form {
+  padding: .5rem 1rem; }
 
 * {
   margin: 0;
@@ -104,7 +109,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 5rem; }
   .productos .productos__banner {
     width: 100%;
     height: 40rem;
@@ -140,6 +146,72 @@ body {
         width: 80%; }
       .productos .productos__items .productos__item p {
         color: #c4cac8; }
+
+.contacto {
+  background-color: #000000;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 5rem;
+  padding: 7rem; }
+  .contacto h3 {
+    margin-bottom: 3rem; }
+  .contacto .formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem; }
+    .contacto .formulario .formulario__item {
+      margin-bottom: 2rem; }
+      .contacto .formulario .formulario__item input, .contacto .formulario .formulario__item select, .contacto .formulario .formulario__item textarea {
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #75DED7;
+        display: block;
+        height: 4rem;
+        width: 100%;
+        color: #ffffff; }
+    .contacto .formulario .btn {
+      grid-column: 2/3;
+      width: 10rem;
+      margin-left: auto; }
+  .contacto .contacto__datos {
+    margin-left: 5rem; }
+    .contacto .contacto__datos ul {
+      list-style: none; }
+      .contacto .contacto__datos ul li {
+        margin: 2rem 0 0 2rem; }
+      .contacto .contacto__datos ul .tel {
+        position: relative; }
+        .contacto .contacto__datos ul .tel:before {
+          content: url(../img/phone-alt-solid.svg);
+          position: absolute;
+          width: 2rem;
+          left: -3rem; }
+      .contacto .contacto__datos ul .cel {
+        position: relative; }
+        .contacto .contacto__datos ul .cel:before {
+          content: url(../img/whatsapp-brands.svg);
+          position: absolute;
+          width: 2rem;
+          left: -3rem; }
+      .contacto .contacto__datos ul .loc {
+        position: relative; }
+        .contacto .contacto__datos ul .loc:before {
+          content: url(../img/map-marker-alt-solid.svg);
+          position: absolute;
+          width: 2rem;
+          left: -3rem; }
+    .contacto .contacto__datos p {
+      margin-top: 2rem;
+      white-space: pre-line; }
+
+.footer {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #75DED7;
+  color: #ffffff; }
 
 h1 {
   color: #ffffff;
