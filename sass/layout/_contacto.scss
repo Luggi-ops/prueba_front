@@ -4,22 +4,14 @@
     background-color: $black;
     color: $white;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
     column-gap: 5rem;
     padding: 7rem;
 
-    h3{
-        margin-bottom: 3rem;
-    }
-
     .formulario{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 4rem;
-
         .formulario__item{
             margin-bottom: 2rem;
-
             input, select, textarea{
                 border: none;
                 background-color: transparent;
@@ -40,7 +32,10 @@
     }
 
     .contacto__datos{
-        margin-left: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         ul{
             list-style: none;
             li{
@@ -87,5 +82,26 @@
         }
 
         
+    }
+}
+
+@media screen and (min-width: 720px){
+    .contacto{
+        grid-template-columns: 2fr 1fr 1fr;
+
+        .formulario{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+            row-gap: 2rem;
+        }
+
+        h3{
+            margin-bottom: 3rem;
+        }
+
+        .contacto__datos{
+            margin-left: 5rem;
+        }
     }
 }

@@ -65,15 +65,66 @@ body {
   padding: 2rem 0; }
   .header .nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center; }
     .header .nav .nav__logo img {
-      width: 18rem; }
+      width: 15rem;
+      position: relative; }
+    .header .nav .navbar__btn__cont {
+      height: 5rem;
+      width: 5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 100; }
+    .header .nav .navbar__btn {
+      position: relative;
+      display: block;
+      content: '';
+      width: 3rem;
+      height: .5rem;
+      background-color: #75DED7;
+      border-radius: .5rem; }
+      .header .nav .navbar__btn::before, .header .nav .navbar__btn::after {
+        content: '';
+        width: 3rem;
+        height: .5rem;
+        background-color: #75DED7;
+        position: absolute;
+        border-radius: .5rem;
+        transition: all .5s; }
+      .header .nav .navbar__btn::before {
+        top: 1rem; }
+      .header .nav .navbar__btn::after {
+        top: -1rem; }
+    .header .nav .navbar__arrow {
+      transition: all .5s; }
+      .header .nav .navbar__arrow::before {
+        top: .5rem;
+        transform: rotate(30deg);
+        width: 2rem; }
+      .header .nav .navbar__arrow::after {
+        top: -.5rem;
+        transform: rotate(-30deg);
+        width: 2rem; }
     .header .nav .nav__ul {
       list-style: none;
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
-      width: 50%; }
+      align-items: center;
+      width: 50%;
+      clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+      transition: all .5s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: #000000; }
       .header .nav .nav__ul a {
         text-decoration: none;
         text-transform: uppercase;
@@ -81,6 +132,20 @@ body {
         font-family: 'Barlow black';
         font-weight: 300;
         font-size: 2rem; }
+    .header .nav .nav__dropdown {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+      transition: all .5s; }
+
+@media screen and (min-width: 720px) {
+  .header .nav .nav__logo img {
+    width: 18rem; }
+  .header .nav .nav__ul {
+    flex-direction: row;
+    height: auto;
+    position: static;
+    width: 50%; }
+  .header .nav .navbar__btn__cont {
+    display: none; } }
 
 .top {
   height: 60vh;
@@ -96,21 +161,27 @@ body {
 .nosotros {
   padding: 8rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center; }
   .nosotros .nosotros__img {
-    flex-basis: 40%;
-    padding: 4rem 0 0 0 img;
-      padding-width: 25rem; }
+    flex-basis: 40%; }
+    .nosotros .nosotros__img img {
+      width: 25rem; }
   .nosotros .nosotros__text {
     flex-basis: 50%; }
+
+@media screen and (min-width: 720px) {
+  .nosotros {
+    flex-direction: row; } }
 
 .productos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  text-align: center; }
   .productos .productos__banner {
     width: 100%;
     height: 40rem;
@@ -131,13 +202,13 @@ body {
       transition: all .5s; }
   .productos .productos__items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
     padding: 10rem 0; }
     .productos .productos__items .productos__item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: baseline;
       transition: all .5s; }
       .productos .productos__items .productos__item:hover {
         transform: scale(1.1); }
@@ -147,35 +218,36 @@ body {
       .productos .productos__items .productos__item p {
         color: #c4cac8; }
 
+@media screen and (min-width: 720px) {
+  .productos .productos__items {
+    grid-template-columns: repeat(3, 1fr); } }
+
 .contacto {
   background-color: #000000;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 5rem;
   column-gap: 5rem;
   padding: 7rem; }
-  .contacto h3 {
-    margin-bottom: 3rem; }
-  .contacto .formulario {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 4rem; }
-    .contacto .formulario .formulario__item {
-      margin-bottom: 2rem; }
-      .contacto .formulario .formulario__item input, .contacto .formulario .formulario__item select, .contacto .formulario .formulario__item textarea {
-        border: none;
-        background-color: transparent;
-        border-bottom: 1px solid #75DED7;
-        display: block;
-        height: 4rem;
-        width: 100%;
-        color: #ffffff; }
-    .contacto .formulario .btn {
-      grid-column: 2/3;
-      width: 10rem;
-      margin-left: auto; }
+  .contacto .formulario .formulario__item {
+    margin-bottom: 2rem; }
+    .contacto .formulario .formulario__item input, .contacto .formulario .formulario__item select, .contacto .formulario .formulario__item textarea {
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #75DED7;
+      display: block;
+      height: 4rem;
+      width: 100%;
+      color: #ffffff; }
+  .contacto .formulario .btn {
+    grid-column: 2/3;
+    width: 10rem;
+    margin-left: auto; }
   .contacto .contacto__datos {
-    margin-left: 5rem; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     .contacto .contacto__datos ul {
       list-style: none; }
       .contacto .contacto__datos ul li {
@@ -204,6 +276,19 @@ body {
     .contacto .contacto__datos p {
       margin-top: 2rem;
       white-space: pre-line; }
+
+@media screen and (min-width: 720px) {
+  .contacto {
+    grid-template-columns: 2fr 1fr 1fr; }
+    .contacto .formulario {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 4rem;
+      row-gap: 2rem; }
+    .contacto h3 {
+      margin-bottom: 3rem; }
+    .contacto .contacto__datos {
+      margin-left: 5rem; } }
 
 .footer {
   padding: 5rem;

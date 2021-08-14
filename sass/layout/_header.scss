@@ -6,21 +6,89 @@
 
     .nav{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         
     
         .nav__logo{
             img{
-                width: 18rem;
+                width: 15rem;
+                position: relative;
+            }
+        }
+        
+        .navbar__btn__cont{
+            height: 5rem;
+            width: 5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar__btn{
+            position: relative;
+            display: block;
+            content: '';
+            width: 3rem;
+            height: .5rem;
+            background-color: $branding;
+            border-radius: .5rem;
+
+            &::before, &::after{
+                content: '';
+                width: 3rem;
+                height: .5rem;
+                background-color: $branding;
+                position: absolute;
+                border-radius: .5rem;
+                transition: all .5s;
+            }
+
+            &::before{
+                top: 1rem;
+            }
+
+            &::after{
+                top: -1rem;
+            }
+        }
+
+        .navbar__arrow{
+            transition: all .5s;
+            &::before{
+                top: .5rem;
+                transform: rotate(30deg);
+                width: 2rem;
+            }
+
+            &::after{
+                top: -.5rem;
+                transform: rotate(-30deg);
+                width: 2rem;
             }
         }
     
         .nav__ul{
             list-style: none;
             display: flex;
+            flex-direction: column;
             justify-content: space-around;
+            align-items: center;
             width: 50%;
+            clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+            transition: all .5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: $black;
+
+            
     
             a{
                 text-decoration: none;
@@ -29,6 +97,34 @@
                 font-family: 'Barlow black';
                 font-weight: 300;
                 font-size: 2rem;
+            }
+        }
+
+        .nav__dropdown{
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            transition: all .5s;
+        }
+    }
+}
+
+@media screen and (min-width: 720px){
+    .header{
+        .nav{
+            .nav__logo{
+                img{
+                    width: 18rem;
+                }
+            }
+
+            .nav__ul{
+                flex-direction: row;
+                height: auto;
+                position: static;
+                width: 50%;
+            }
+
+            .navbar__btn__cont{
+                display: none;
             }
         }
     }
