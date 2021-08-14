@@ -1,6 +1,7 @@
 
 @import 'utilities/colors';
 @import 'utilities/fonts';
+@import 'utilities/btns';
 @import 'bases/resets';
 @import 'layout/header';
 @import 'layout/top_section';
@@ -21,4 +22,10 @@ h2{
     font-family: Garamond;
     font-weight: 300;
     font-size: 5rem;
+}
+
+h3{
+    font-family: Garamond;
+    font-weight: 400;
+    font-size: 4rem;
 }

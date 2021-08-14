@@ -2,8 +2,13 @@
 
 
 .productos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .productos__banner{
+        width: 100%;
         height: 40rem;
         background-image: url(../img/BANNER_Sillon.png);
         display: flex;
@@ -17,15 +22,40 @@
         &:hover>h2{
             transform: scale(1.1);
         }
+
+        h2{
+            font-family: 'Barlow black';
+            font-size: 6rem;
+            font-weight: 400;
+            color: $white;
+            transition: all .5s;
+        }
     }
 
-    h2{
-        font-family: 'Barlow black';
-        font-size: 6rem;
-        font-weight: 400;
-        color: $white;
-        transition: all .5s;
-    }
+    .productos__items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10rem 0;
 
-    
+        .productos__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: baseline;
+            transition: all .5s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+            
+            img{
+                margin-bottom: 2rem;
+                width: 80%;
+            }
+
+            p{
+                color: $grey;
+            }
+        }
+    }
 }

@@ -28,6 +28,15 @@
   font-style: normal;
   font-weight: 400; }
 
+.btn {
+  padding: 1rem 4rem;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.btn-prim {
+  background-color: #75DED7;
+  color: #ffffff; }
+
 * {
   margin: 0;
   padding: 0;
@@ -91,24 +100,46 @@ body {
   .nosotros .nosotros__text {
     flex-basis: 50%; }
 
-.productos .productos__banner {
-  height: 40rem;
-  background-image: url(../img/BANNER_Sillon.png);
+.productos {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  transition: all .5s; }
-  .productos .productos__banner:hover {
-    filter: brightness(0.8); }
-  .productos .productos__banner:hover > h2 {
-    transform: scale(1.1); }
-
-.productos h2 {
-  font-family: 'Barlow black';
-  font-size: 6rem;
-  font-weight: 400;
-  color: #ffffff;
-  transition: all .5s; }
+  align-items: center; }
+  .productos .productos__banner {
+    width: 100%;
+    height: 40rem;
+    background-image: url(../img/BANNER_Sillon.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s; }
+    .productos .productos__banner:hover {
+      filter: brightness(0.8); }
+    .productos .productos__banner:hover > h2 {
+      transform: scale(1.1); }
+    .productos .productos__banner h2 {
+      font-family: 'Barlow black';
+      font-size: 6rem;
+      font-weight: 400;
+      color: #ffffff;
+      transition: all .5s; }
+  .productos .productos__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10rem 0; }
+    .productos .productos__items .productos__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: baseline;
+      transition: all .5s; }
+      .productos .productos__items .productos__item:hover {
+        transform: scale(1.1); }
+      .productos .productos__items .productos__item img {
+        margin-bottom: 2rem;
+        width: 80%; }
+      .productos .productos__items .productos__item p {
+        color: #c4cac8; }
 
 h1 {
   color: #ffffff;
@@ -123,3 +154,8 @@ h2 {
   font-family: Garamond;
   font-weight: 300;
   font-size: 5rem; }
+
+h3 {
+  font-family: Garamond;
+  font-weight: 400;
+  font-size: 4rem; }
