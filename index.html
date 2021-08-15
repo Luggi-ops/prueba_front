@@ -84,42 +84,41 @@
     <section class="contacto" id="contacto">
         <div>
             <h3>Formulario</h3>
-            <form action="" class="formulario">
+            <form action="" class="formulario" id="form">
                 <div class="formulario__item">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="nombre">
                 </div>
                 
                 <div class="formulario__item">
                     <label for="prov">Provincia</label>
-                    <select id="prov">
+                    <select id="prov" name="provincia">
                         <option value=""></option>
                     </select>
                 </div>
                 
                 <div class="formulario__item">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="email">
                 </div>
 
                 <div class="formulario__item">
                     <label for="data">Horario de contacto</label>
-                    <input type="time" id="data">
+                    <input type="time" id="data" name="hora">
                 </div>
 
                 <div class="formulario__item">
                     <label for="tel">Teléfono</label>
-                    <input type="tel" id="tel">
+                    <input type="tel" id="tel" name="tel">
                 </div>
 
                 <div class="formulario__item">
                     <label for="cons">Consulta</label>
-                    <textarea name="const" id="cons"></textarea>
+                    <textarea id="cons" name="consulta"></textarea>
                 </div>
 
  
-                <button type="submit" class="btn btn-prim btn-form">Enviar</button>
-                
+                <button type="submit" id="btn-form" class="btn btn-prim btn-form">Enviar</button>
             </form>
         </div>
 
@@ -143,6 +142,7 @@
         <p>Todos los derechos reservados.</p>
     </footer>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

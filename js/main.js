@@ -13,7 +13,7 @@ $navbarbutton.addEventListener('click', (e)=>{
 })
 
 
-//Form
+//Form provincias
 
 const $selectProv = document.getElementById('prov');
 
@@ -41,3 +41,39 @@ const traerDatosProvincias = ()=>{
 }
 
 $selectProv.addEventListener('click', traerDatosProvincias());
+
+
+//SEND FORM
+
+const $btnForm = document.getElementById('btn-form');
+const $form = document.getElementById('form');
+
+
+$form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    let formDates = new FormData($form);
+
+    const msg = {
+        nombre: formDates.get('nombre'),
+        provincia: formDates.get('provincia'),
+        email: formDates.get('email'),
+        horario: formDates.get('hora'),
+        tel: formDates.get('tel'),
+        consulta: formDates.get('consulta')
+    }
+
+    const token = `eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ`
+
+    fetch('https://sistemacaliva.com/api/front-test', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(msg),
+    })
+    .then(res => console.log(res))
+})
+
