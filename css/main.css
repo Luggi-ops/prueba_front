@@ -131,7 +131,11 @@ body {
         color: #ffffff;
         font-family: 'Barlow black';
         font-weight: 300;
-        font-size: 2rem; }
+        font-size: 2rem;
+        border-bottom: 1px solid transparent;
+        transition: border .5s; }
+        .header .nav .nav__ul a:hover {
+          border-bottom: 1px solid #ffffff; }
     .header .nav .nav__dropdown {
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
       transition: all .5s; }
@@ -292,6 +296,45 @@ body {
       margin-bottom: 3rem; }
     .contacto .contacto__datos {
       margin-left: 5rem; } }
+
+.modalForm, .modalError {
+  position: fixed;
+  z-index: 900;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #4A4946aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden; }
+
+.modalForm__message, .modalForm__error {
+  width: 40rem;
+  height: 30rem;
+  background-color: #FBFCFB;
+  box-shadow: 0 0 20px #4A4946;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 1s;
+  transform: translateY(200%); }
+
+.modalForm__close, .modalError__close {
+  transform: translateY(0%); }
+
+.closeModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem 1rem 0 0;
+  cursor: pointer;
+  width: 2rem; }
 
 .footer {
   padding: 5rem;

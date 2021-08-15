@@ -97,6 +97,12 @@
                 font-family: 'Barlow black';
                 font-weight: 300;
                 font-size: 2rem;
+                border-bottom: 1px solid transparent;
+                transition: border .5s;
+
+                &:hover{
+                    border-bottom: 1px solid $white;
+                }
             }
         }
 

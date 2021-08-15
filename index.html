@@ -138,10 +138,29 @@
         </div>
     </section>
 
+    <div class="modalForm" id="modalForm">
+		<div class="modalForm__message" id="modalForm__message">
+            <img src="img/times-solid.svg" alt="" class="closeModal" id="closeModalForm">
+			<h3>Gracias!</h3>
+            <p>Te contactaremos a la brevedad!</p>
+		</div>
+	</div>
+
+
+	<div class="modalError" id="modalError">
+		<div class="modalForm__error" id="modalError__message">
+            <img src="img/times-solid.svg" alt="" class="closeModal" id="closeModalError">
+			<h3>Upps!</h3>
+            <p>Lo sentimos, hubo un error.</p>
+            <p>Intenta nuevamente más tarde.</p>
+		</div>
+	</div>
+
     <footer class="footer">
         <p>Todos los derechos reservados.</p>
     </footer>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

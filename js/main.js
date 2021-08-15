@@ -18,29 +18,28 @@ $navbarbutton.addEventListener('click', (e)=>{
 const $selectProv = document.getElementById('prov');
 
 const traerDatosProvincias = ()=>{
-    let xhr = new XMLHttpRequest();
-    
-
-    xhr.open('GET', 'https://apis.datos.gob.ar/georef/api/provincias', true);
-
-    xhr.addEventListener('load', (data)=>{
-        const provincias = JSON.parse(data.target.response).provincias;
+    fetch('https://apis.datos.gob.ar/georef/api/provincias')
+    .then(res => res.ok ? Promise.resolve(res) : Promise.reject(res))
+    .then(res => res.json())
+    .then(data => {
+        const provincias = data.provincias;
         const fragment = document.createDocumentFragment();
+        const provinciasArr = [];
 
-        provincias.forEach(provincia => {
+        provincias.forEach(provincia => provinciasArr.push(provincia.nombre));
+
+        provinciasArr.sort().forEach(provincia => {
             const optionProv = document.createElement('OPTION');
-            optionProv.textContent = provincia.nombre;
+            optionProv.textContent = provincia;
 
             fragment.appendChild(optionProv);
-        });
-
+        })
+        
         $selectProv.appendChild(fragment);
     })
-
-    xhr.send();
 }
 
-$selectProv.addEventListener('click', traerDatosProvincias());
+$selectProv.addEventListener('click', traerDatosProvincias);
 
 
 //SEND FORM
@@ -48,6 +47,13 @@ $selectProv.addEventListener('click', traerDatosProvincias());
 const $btnForm = document.getElementById('btn-form');
 const $form = document.getElementById('form');
 
+const $close = document.getElementById('closeModalForm');
+const $modalContainer = document.getElementById('modalForm');
+const $modalForm = document.getElementById('modalForm__message');
+
+const $closeError = document.getElementById('closeModalError');
+const $modalErrorContainer = document.getElementById('modalError');
+const $modalError = document.getElementById('modalError__message');
 
 $form.addEventListener('submit', (event)=>{
     event.preventDefault();
@@ -62,18 +68,42 @@ $form.addEventListener('submit', (event)=>{
         consulta: formDates.get('consulta')
     }
 
-    const token = `eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ`;
+    axios.defaults.headers.common = {
+        "API-Key": `eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ`
+    };
 
-    fetch('https://sistemacaliva.com/api/front-test', {
+    axios({
         method: 'POST',
-        mode: 'cors',
+        url: 'https://sistemacaliva.com/api/front-test',
+        data: msg,
         headers: {
             "Content-Type": "application/json",
-            "api-key": `${token}`,
-            "Origin": "*",
-        },
-        body: JSON.stringify(msg),
+        }
     })
-    .then(res => console.log(res))
+    .then(res => {
+        $modalContainer.style.visibility = 'visible';
+		$modalContainer.style.opacity = '1';
+        $modalForm.classList.toggle('modalForm__close');
+    })
+    .catch(err => {
+        $modalErrorContainer.style.visibility = 'visible';
+		$modalErrorContainer.style.opacity = '1';
+		$modalError.classList.toggle('modalError__close');
+        console.log(err)
+
+    })
+
+});
+
+//cerrar modales
+$close.addEventListener('click', ()=>{
+    $modalContainer.style.visibility = 'hidden';
+    $modalContainer.style.opacity = '0';
+    $modalForm.classList.toggle('modalForm__close');
 })
 
+$closeError.addEventListener('click', ()=>{
+    $modalErrorContainer.style.visibility = 'hidden';
+    $modalErrorContainer.style.opacity = '0';
+    $modalError.classList.toggle('modalError__close');
+})
