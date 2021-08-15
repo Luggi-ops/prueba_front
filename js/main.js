@@ -62,15 +62,15 @@ $form.addEventListener('submit', (event)=>{
         consulta: formDates.get('consulta')
     }
 
-    const token = `eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ`
+    const token = `eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ`;
 
     fetch('https://sistemacaliva.com/api/front-test', {
         method: 'POST',
         mode: 'cors',
         headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${token}`,
-            'Content-type': 'application/json'
+            "Content-Type": "application/json",
+            "api-key": `${token}`,
+            "Origin": "*",
         },
         body: JSON.stringify(msg),
     })
